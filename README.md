@@ -1,10 +1,10 @@
 # Technical Assessment
-NOTE: If you are unfamiliar with the node.js ecosystem and don't feel this would be a fair assessment please reach out and we can provide and alternate problem.  
+NOTE: If you are unfamiliar with the node.js ecosystem and don't feel this would be a fair assessment please reach out and we can provide an alternate problem.
 ## Overview
-Please complete this exercise with node.js and TypeScript or JavaScript.  This exercise is intented to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please record any questions, assumptions, plans or future considerations.  
+Please complete this exercise with node.js and TypeScript or JavaScript.  This exercise is intended to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please record any questions, assumptions, plans or future considerations.
 For example, 
 ```
-Do the endpoints need to be secured?  I assumed not for this exercise but would suggest adding authorization in the future
+Do the endpoints need to be secured?  I assumed not for this exercise but would suggest adding authorization in the future.
 ```
 ## Problem
 Assume that NS8 has contracted you to build a small RESTful API to support their new user tracking software.  There are many node.js frameworks that could help you with this.  For example, express, restify etc.  
@@ -51,7 +51,7 @@ An HTTP POST to `/users/{id}/events` with the following json
 }
 ```
 will produce a user event with the type "LOGIN".  
-The {id} would be the id of a previously created user
+The {id} would be the id of a previously created user.
 
 ___
 An HTTP GET to `/users/events` will always return a json array of event data.  The event data returned should at least have the following elements
@@ -63,7 +63,7 @@ An HTTP GET to `/users/events` will always return a json array of event data.  T
   }
 ]
 ```
-Where `created` is the date the event was created.  Choose any date format. 
+where `created` is the date the event was created.  Choose any date format. 
 ___
 The following use cases should be satisfied
 - return all events for all users
@@ -74,8 +74,4 @@ The following use cases should be satisfied
 Choose one of the following
 - provide a public repository where we can view/download your solution
 - zip all files and email them
-
-
-
-
 
