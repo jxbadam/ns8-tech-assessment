@@ -1,7 +1,8 @@
 # Technical Assessment
 NOTE: If you are unfamiliar with the node.js ecosystem and don't feel this would be a fair assessment please reach out and we can provide an alternate problem.
 ## Overview
-Please complete this exercise with node.js and TypeScript or JavaScript.  This exercise is intended to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please record any questions, assumptions, plans or future considerations.
+Please complete this exercise with node.js and TypeScript or JavaScript.  This exercise is intended to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please include any questions, assumptions, plans or future considerations by providing a README with your submission.
+
 For example, 
 ```
 Do the endpoints need to be secured?  I assumed not for this exercise but would suggest adding authorization in the future.
