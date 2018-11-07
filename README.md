@@ -1,7 +1,7 @@
 # Technical Assessment
-NOTE: If you are unfamiliar with the node.js ecosystem and don't feel this would be a fair assessment please reach out and we can provide an alternate problem.
+NOTE: We are very open to new technologies as we mature and grow, but we have chosen TypeScript as our language for our back end.  The majority of the work for this position will initially be using TypeScript.
 ## Overview
-Please complete this exercise with node.js and TypeScript or JavaScript.  This exercise is intended to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please include any questions, assumptions, plans or future considerations by providing a README with your submission.
+Please complete this exercise with node.js and TypeScript.  This exercise is intended to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please include any questions, assumptions, plans or future considerations by providing a README with your submission.
 
 For example, 
 ```
