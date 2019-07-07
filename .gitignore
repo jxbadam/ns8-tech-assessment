@@ -1,0 +1,8 @@
+node_modules
+*.tmp
+nb_project/*
+*~
+dist/*
+.nyc_output
+coverage/*
+docs/*

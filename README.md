@@ -1,74 +1,63 @@
-# Technical Assessment
-NOTE: We are very open to new technologies as we mature and grow, but we have chosen TypeScript as our language for our back end.  The majority of the work for this position will initially be using TypeScript.
-## Overview
-Please complete this exercise with node.js and TypeScript.  This exercise is intended to take no longer than 4 hours.  Please limit the detail of your solution with that time in mind.  Also, please include any questions, assumptions, plans or future considerations by providing a README with your submission.
+# NS8 Technical Challenge (or how I learned to hate javascript less and make it OO)
 
-For example, 
-```
-Do the endpoints need to be secured?  I assumed not for this exercise but would suggest adding authorization in the future.
-```
-## Problem
-Assume that NS8 has contracted you to build a small **RESTful API** to support their new user tracking software.  There are many node.js frameworks that could help you with this.  For example, express, restify etc.  
+This submission is provided to prove that I might be worthy of either an interview,
+a job offer, or a substantial lesson in the correct way to architect javascript
+software. While I personally am hoping for one of the first two options the third
+option always looms large.
 
-Data does not need to be persisted between server restarts. 
+### Instructions
+#### Prerequisites
+While this is a technical challenge and one would assume that the reviewer is able
+to get things up and running by following "standard" NodeJS practices, this is not
+always the case, thus the following items are given as required to run this software.
 
-## Data definition
+* NodeJS version 8 (or greater)
+* The ability to read and follow simple directions and to have a great sense of humor
 
-### User
-- email
-  - string
-  - This field is required to create a new user
-  - The system must only allow 1 user per unique email address
-- password
-  - string
-  - This field is required to create a new user
-- phone number 
-  - string
-  - This field is optional
-  - When provided, the phone number must follow this pattern ###-###-####
-### Event
-- type
-  - This field is required to create a new event
-  - The value can be any non-empty string
- 
-## Data examples
+#### Installation and Available Commands
+The following will install the library software upon which this program depends.
+* npm install
 
-The following input json would create a user
-```json
-{
-  "email": "test@ns8.com",
-  "password": "passwordIsPizza",
-  "phone": "333-222-1111"
-}
-```
-___
-The following input json would create an event with the type LOGIN
-```json
-{
-  "type": "LOGIN"
-}
-```
-___
+The following commands are available via `package.json`.
+<dl>
+  <dt>npm start</dt>
+  <dd>Perform all build operations and start the server</dd>
 
-The following use cases should be satisfied to get user event data
-- return all events for all users
-- return all events for a single user
-- return all events for the last day
+  <dt>npm run debug</dt>
+  <dd>Perform all build operations and start the server in DEBUG mode (extra output to console)</dd>
 
-The json data returned should at least have the following elements
-```json
-[
-  {
-    "type": "LOGIN",
-    "created: 47239847298347
-  }
-]
-```
-where `created` is the date the event was created.  Choose any date format. 
-___
+  <dt>npm run lint</dt>
+  <dd>Perform linting on the project. This will also be done as part of the build process.</dd>
 
-## Submission
-Choose one of the following
-- provide a public repository where we can view/download your solution
-- zip all files and email them
+  <dt>npm run build</dt>
+  <dd>Perform all build operations but do not start the server</dd>
 
+  <dt>npm run document</dt>
+  <dd>Generate the project documentation (available in the [docs/](./docs/index.html) directory)</dd>
+
+  <dt>npm run test</dt>
+  <dd>Run all of the unit and integration tests. This will generate a coverage report available in [coverage/](./coverage/index.html)</dd>
+
+  <dt>npm run debug-test</dt>
+  <dd>Similar to the `debug` command above, but for the tests. Extra output will be included during the test run.</dd>
+
+  <dt>npm run tsc</dt>
+  <dd>Run the typescript compiler. No linting is performed. This does NOT send a runner to Tropical Smothie Cafe for a mocha madness smoothie. You will be disappoint.</dd>
+</dl>
+
+### Application Programming Interface (API)
+This is the meat of the application and shows all of the endpoints and how they
+are hooked together
+
+### Errata (Gotchas and General Discussion)
+
+#### Sources
+Below is a list of URLs that I referenced while implementing this project.
+##### Developing in TypeScript
+https://www.typescriptlang.org/docs/home.html
+
+##### Testing with Mocha / Chai and NYC (formerly Istanbul)
+https://journal.artfuldev.com/unit-testing-node-applications-with-typescript-using-mocha-and-chai-384ef05f32b2
+https://istanbul.js.org/docs/tutorials/typescript/
+https://azimi.me/2016/09/30/nyc-mocha-typescript.1.html
+https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a40

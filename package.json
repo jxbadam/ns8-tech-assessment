@@ -1,0 +1,71 @@
+{
+  "name": "ns8-tech-assessment",
+  "version": "0.0.1",
+  "description": "A tech assessment that started with no package.json (odd, but okay)",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run lint && tsc",
+    "debug": "npm run build && DEBUG=CC* node dist/index.js",
+    "document": "typedoc --out docs src",
+    "start": "npm run build && node dist/index.js",
+    "lint": "tslint src/**/*.ts{,x}",
+    "test": "nyc -r lcov -e .ts -x \"*.spec.ts\" mocha --timeout 10000 && nyc report",
+    "debug-test": "DEBUG=CC* nyc -r lcov -e .ts -x \"*.spec.ts\" mocha --timeout 10000 && nyc report",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ns8inc/ns8-tech-assessment.git"
+  },
+  "keywords": [
+    "ns8",
+    "tech",
+    "assessment",
+    "typescript",
+    "nodejs",
+    "express"
+  ],
+  "author": "Adam Carnine",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/ns8inc/ns8-tech-assessment/issues"
+  },
+  "homepage": "https://github.com/ns8inc/ns8-tech-assessment#readme",
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "coverage/**",
+      "dist/**",
+      "test/**"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/express": "^4.17.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.12",
+    "@types/supertest": "^2.0.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "source-map-support": "^0.5.12",
+    "supertest": "^4.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.5.2"
+  }
+}
