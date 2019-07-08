@@ -42,19 +42,29 @@ The following commands are available via `package.json`.
   <dd>Similar to the `debug` command above, but for the tests. Extra output will be included during the test run.</dd>
 
   <dt>npm run tsc</dt>
-  <dd>Run the typescript compiler. No linting is performed. This does NOT send a runner to Tropical Smothie Cafe for a mocha madness smoothie. You will be disappoint.</dd>
+  <dd>Run the typescript compiler. No linting is performed. This does NOT send a runner to Tropical Smoothie Cafe for a mocha madness smoothie. You will be disappoint.</dd>
 </dl>
 
 ### Application Programming Interface (API)
 This is the meat of the application and shows all of the endpoints and how they
-are hooked together
+are hooked together.
+
+Run `npm start` and then use the Swagger [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
 
 ### Errata (Gotchas and General Discussion)
+So many things can go here (lack of HTTPS, better authentication, significantly better specification of API).
+
+I could write several pages here, however if further discussion is warranted let's schedule a phone call.
 
 #### Sources
 Below is a list of URLs that I referenced while implementing this project.
 ##### Developing in TypeScript
 https://www.typescriptlang.org/docs/home.html
+
+##### Documenting with Swagger
+https://www.npmjs.com/package/swagger-ui-express
+https://www.npmjs.com/package/swagger-jsdoc
+https://swagger.io/
 
 ##### Testing with Mocha / Chai and NYC (formerly Istanbul)
 https://journal.artfuldev.com/unit-testing-node-applications-with-typescript-using-mocha-and-chai-384ef05f32b2
