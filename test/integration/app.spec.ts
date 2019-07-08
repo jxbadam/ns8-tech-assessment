@@ -5,6 +5,8 @@ import { expect } from "chai";
 import { app, server } from "../../src/index";
 import { sleep } from "../../src/lib/util";
 
+const DEFAULT_DELAY_BETWEEN_EVENTS_MILLIS = 200;
+
 const VALID_USER_WITH_PHONE = {
   "email": "test@ns8.com",
   "password": "passwordIsPizza",
@@ -59,7 +61,9 @@ function getEventRange(totalEvents: number, start?: number, end?: number) {
           // test the contents of the response
           const body = response.body;
 
-          expect(body.length).to.equal(totalEvents);
+          // Yay uncertainty in tests (boo!)
+          expect(body.length).to.be.gte(totalEvents - 1);
+          expect(body.length).to.be.lte(totalEvents);
 
           done();
         })
@@ -104,7 +108,7 @@ function getEventTest(type: string, id: number) {
           type
         })
         .expect("Content-Type", /json/)
-        .expect(200)
+        .expect(201)
         .then((response) => {
           // test the contents of the response
           const body = response.body;
@@ -112,7 +116,7 @@ function getEventTest(type: string, id: number) {
           expect(body.id).to.equal(id);
           expect(body.type).to.equal(type);
 
-          return sleep(200);
+          return sleep(DEFAULT_DELAY_BETWEEN_EVENTS_MILLIS);
         })
         .then(done)
         .catch((err) => {
@@ -299,7 +303,6 @@ describe("(integration) NAS-8 Code Challenge Integration Test Suite", () => {
 
   // Event Tests (add some events)
   const start = (new Date()).getTime();
-  const end = start + 1100;
   getEventTest("LOGIN", 1);
   getEventTest("PAGE-A", 2);
   getEventTest("PAGE-B", 3);
@@ -360,6 +363,7 @@ describe("(integration) NAS-8 Code Challenge Integration Test Suite", () => {
   getUserEventTest(1, 3);
   getUserEventTest(2, 4);
 
+  const end = start + Math.ceil(DEFAULT_DELAY_BETWEEN_EVENTS_MILLIS * 5.5);
   getEventRange(5, start, end);
   getEventRange(7);
 

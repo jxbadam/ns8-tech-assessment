@@ -1,3 +1,12 @@
+/**
+ * @swagger
+ * /not-found:
+ *    get:
+ *      description: Default route always returns 404!
+ *      responses:
+ *        404:
+ *          description: Always returns a 404, no matter what route is hit here)
+ */
 
 import * as express from "express";
 

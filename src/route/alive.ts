@@ -1,3 +1,9 @@
+/**
+ * @swagger
+ * /sys/alive:
+ *    get:
+ *      description: Returns information about the running server for use in application monitoring
+ */
 
 import * as express from "express";
 

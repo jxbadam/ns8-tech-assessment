@@ -43,7 +43,7 @@ export class EventController extends BaseController {
 
     event = EventDao.getInstance().save(event);
 
-    response.status(200).json(event);
+    response.status(201).json(event);
   }
 
   public getEventsForTimeRange(request: express.Request, response: express.Response, next) {

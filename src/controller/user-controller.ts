@@ -56,7 +56,7 @@ export class UserController extends BaseController {
     const email = request.body.email;
     const password = request.body.password;
 
-    let user: User = UserDao.getInstance().findByEmail(email);
+    const user: User = UserDao.getInstance().findByEmail(email);
 
     if (user == null) {
       const errors = super.getErrorObject(["no_user_found"]);

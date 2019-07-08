@@ -48,9 +48,12 @@
     "all": true
   },
   "dependencies": {
+    "@types/swagger-ui-express": "^3.0.1",
     "body-parser": "^1.19.0",
     "debug": "^4.1.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "swagger-jsdoc": "^3.2.9",
+    "swagger-ui-express": "^4.0.7"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
@@ -58,6 +61,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.12",
     "@types/supertest": "^2.0.8",
+    "@types/swagger-jsdoc": "0.0.2",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",

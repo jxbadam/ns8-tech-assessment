@@ -1,4 +1,5 @@
 import * as BodyParser from "body-parser";
+import * as SwaggerUI from "swagger-ui-express";
 import express from "express";
 
 import { addTimestampsToDebugLogging } from "./lib/quality";
@@ -10,6 +11,8 @@ import { event } from "./route/event";
 import { user } from "./route/user";
 
 import { defaultRoute } from "./route/default-route";
+
+import { specs } from "./swagger-spec";
 
 // Do all the general project quality items
 addTimestampsToDebugLogging();
@@ -29,6 +32,20 @@ app.use(alive());
 app.use(event());
 app.use(user());
 
+
+// Add SWAGGER (do NOT do in production!)
+const swaggerOptions = {
+  explorer: false,
+
+  // so not intuitive, bad library design!
+  swaggerOptions: {
+    // can also be a function
+    apisSorter: "alpha",
+    // can also be 'alpha' or a function
+    operationsSorter : "method",
+  },
+};
+app.use('/api-docs', SwaggerUI.serve, SwaggerUI.setup(specs, swaggerOptions));
 
 // Default route that always sends a HTTP Status Code 404 (not found)
 app.use(defaultRoute);
